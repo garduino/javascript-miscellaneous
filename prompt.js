@@ -1,5 +1,6 @@
 // prompt example
-// Requiere install of prompt package as node install primality
+// Requiere install of prompt package as node install prompt
+// Documentation: https://www.npmjs.com/package/prompt
 
 var prompt = require('prompt');
 
