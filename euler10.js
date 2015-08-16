@@ -1,5 +1,5 @@
 // Find the sum of all the primes below two million.
-// Requiere install of primality package as node install primality
+// Requires install of primality package as node install primality
 
 var primality = require('primality');
 var n = 0;
