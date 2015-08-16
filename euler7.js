@@ -13,7 +13,6 @@ for (var i=1; i<200000; i++) {
 		console.log(i + ' is 10001st prime number!' );
 			}
     	}
-    	// console.log(i);
 }
 
 
