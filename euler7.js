@@ -1,5 +1,5 @@
 // Return the 10001 st primer number.
-// Requiere install of primality package as node install primality
+// Requires install of primality package as node install primality
 
 var primality = require('primality');
 var n = 0;
