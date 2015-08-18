@@ -1,3 +1,6 @@
+// Esto no anda, son sólo ejemplos,  ver como integrarlo con fibonacci.js que genera la lista
+// a partir de la cual obtener la suma buscada.
+
 // By considering the terms in the Fibonacci sequence whose values
 // do not exceed four million, find the sum of the even-valued terms.
 // Requires install of primality package as node install primality
