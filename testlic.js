@@ -1,6 +1,6 @@
 var licenseKey = require("licensekey")
 
-var userInfo = {company:"lasegunda.com",street:"Bv. Oronio 399", city:"Rosario", state:"Santa Fe", zip:"2000"}
+var userInfo = {company:"miempresa.com",street:"Avellaneda 399", city:"Rosario", state:"Santa Fe", zip:"2000"}
 
 console.log(userInfo);
 
