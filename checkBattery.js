@@ -1,3 +1,5 @@
+
+var tea = require('./battery');
 // Get battery status as soon as it's available
 Battery.getStatus(function(status, error) {
   if(error) {
