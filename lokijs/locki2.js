@@ -3,9 +3,9 @@ var loki = require('lokijs');
 
 // var db2 = new loki('test.json');
 
-var db2 = new loki('test.json', {
+var db2 = new loki('test.db', {
 	autoload: true,
-	// autoloadCallback : databaseInitialize,
+	autoloadCallback : databaseInitialize,
 	autosave: true, 
 	autosaveInterval: 4000
 });

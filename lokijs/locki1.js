@@ -1,6 +1,6 @@
 var loki = require('lokijs'),
-  db = new loki('test.json'),
-  db2 = new loki('test.json');
+  db = new loki('test.db'),
+  db2 = new loki('test.db');
 
 var users = db.addCollection('users');
 users.insert({
