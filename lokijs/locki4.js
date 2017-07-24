@@ -1,28 +1,17 @@
-var loki = require('lokijs');
 
-   var db = new loki('test1.db', { 
-          env: 'NODEJS', 
-          autoload: true,
-          autoloadCallback: function() {
-            var contacts = db.getCollection('contacts');
-            
-            // if the database did not exist we will initialize empty database here
-            if (contacts === null) {
-              contacts = db.addCollection('contacts');
-              contacts.insert({name: 'joe', age: 39, firstLanguage: 'italian'});
-              contacts.insert({name: 'dave', age: 30, firstLanguage: 'english'});
-              contacts.insert({name: 'tim', age: 30, firstLanguage: 'english'});
-              contacts.insert({name: 'jonas', age: 30, firstLanguage: 'swedish'});
-              contacts.insert({name: 'pedro', age: 30, firstLanguage: 'spanish'});
-            }
-            
-            console.log('Contactos');
-            console.log(contacts);
-            console.log('******************** base de datos ***************');
-            console.log(db);
-            // db.apply();
-          },
-          autosave : true,
-          autosaveInterval : 5000
-        }
-      );
+// Create a datastore
+var loki = require(‘lokijs’), db = new loki('testdr.db');
+
+// Create a collection
+var doctors = db.addCollection(‘doctors’);
+
+// Insert some records
+doctors.insert({ name: ‘David Tennant’, doctorNumber: 10 }); 
+doctors.insert({ name: ‘Matt Smith’, doctorNumber: 11 });
+
+// Create a dynamic view
+var view = doctors.addDynamicView(‘newerDoctors”); 
+view.applyWhere(function (obj) { return obj.doctorNumber > 8; }): view.applySimpleSort('doctorNumber', true);
+
+console.log('*************************** Ahora view.data *****************************')
+view.data();
