@@ -1,5 +1,4 @@
 
-// Tomado de https://gist.github.com/seriousme/122684ca0396dbd6262f
 
 // inspired by https://github.com/mmoulton/krypt/blob/develop/lib/krypt.js
 
@@ -9,8 +8,7 @@ var crypto = require('crypto');
 var CIPHER = 'aes-256-cbc',
     KEY_DERIVATION = 'pbkdf2',
     KEY_LENGTH = 256,
-    ITERATIONS = 64000,
-    DIGEST = 'sha512';
+    ITERATIONS = 64000;
 	
 function encrypt(input,secret){
   if (!secret) {
@@ -23,7 +21,7 @@ function encrypt(input,secret){
 
   try {
 
-    var key = crypto.pbkdf2Sync(secret, salt, ITERATIONS, KEY_LENGTH / 8, DIGEST),
+    var key = crypto.pbkdf2Sync(secret, salt, ITERATIONS, KEY_LENGTH / 8),
         cipher = crypto.createCipheriv(CIPHER, key, iv);
 
     var encryptedValue = cipher.update(input, 'utf8', 'base64');
@@ -34,7 +32,6 @@ function encrypt(input,secret){
       keyDerivation: KEY_DERIVATION,
       keyLength: KEY_LENGTH,
       iterations: ITERATIONS,
-      digest: DIGEST,
       iv: iv.toString('base64'),
       salt: salt.toString('base64'),
       value: encryptedValue
@@ -78,7 +75,7 @@ function decrypt(input, secret) {
 
   try {
 
-    var key = crypto.pbkdf2Sync(secret, salt, iterations, keyLength / 8, digest),
+    var key = crypto.pbkdf2Sync(secret, salt, iterations, keyLength / 8),
         decipher = crypto.createDecipheriv(CIPHER, key, iv);
 
     var decryptedValue = decipher.update(input.value, 'base64', 'utf8');
