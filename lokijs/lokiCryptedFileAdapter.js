@@ -78,11 +78,14 @@ function decrypt(input, secret) {
 
   try {
 
-    var key = crypto.pbkdf2Sync(secret, salt, iterations, keyLength / 8, digest),
+    var key = crypto.pbkdf2Sync(secret, salt, iterations, keyLength / 8, DIGEST),
         decipher = crypto.createDecipheriv(CIPHER, key, iv);
 
     var decryptedValue = decipher.update(input.value, 'base64', 'utf8');
     decryptedValue += decipher.final('utf8');
+
+    console.log(decryptedValue);
+    // Acá devuelve la DB entera desencriptada!
 
     return decryptedValue;
 
