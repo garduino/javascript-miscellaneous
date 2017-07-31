@@ -14,5 +14,14 @@ var view = doctors.addDynamicView('newerDoctors');
 view.applyWhere(function (obj) { return obj.doctorNumber > 8; });
 view.applySimpleSort('doctorNumber', true);
 
-console.log('*************************** Ahora view.data *****************************')
+console.log('*************************** Ahora view.data *****************************');
+console.log(db);
 view.data();
+
+// Add two more doctors
+doctors.insert({
+ name: 'Paul McGann', doctorNumber: 8
+});
+doctors.insert({
+ name: 'Peter Capaldi', doctorNumber: 12
+});
