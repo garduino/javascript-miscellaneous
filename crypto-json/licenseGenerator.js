@@ -18,3 +18,8 @@ var encrypted = cryptoJSON.encrypt(license, passKey, {
 })
  
 console.dir(encrypted) // => 
+
+var due_date = '12/31/2017';
+var inst_date = '08/01/2017';
+console.log(due_date - inst_date);
+console.log(inst_date < due_date);
