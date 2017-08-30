@@ -12,3 +12,5 @@ function suma(numero_uno,numero_dos,callback){
        callback(resultado);
     }, 500);
  }
+
+module.exports.suma=suma;
