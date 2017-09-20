@@ -1,9 +1,10 @@
 var serial = require('node-serial-key');
+var out2 = '';
 
 var out1 = serial.getSerial(function(err, output) {
     //// GET SERIAL NUMBER ON DEVICE ////
     console.log('Output: ' + output);
-    var out2 = output;
+    out2 = output;
 })
 
 console.log(out1);
